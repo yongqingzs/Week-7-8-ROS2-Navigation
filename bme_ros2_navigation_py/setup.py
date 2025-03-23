@@ -22,7 +22,6 @@ setup(
         'console_scripts': [
             'send_initialpose = bme_ros2_navigation_py.send_initialpose:main',
             'slam_toolbox_load_map = bme_ros2_navigation_py.slam_toolbox_load_map:main',
-            'follow_waypoints = bme_ros2_navigation_py.follow_waypoints:main',
         ],
     },
 )
