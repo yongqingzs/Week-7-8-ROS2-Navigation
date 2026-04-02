@@ -52,7 +52,8 @@ def generate_launch_description():
     map_file_path = os.path.join(
         get_package_share_directory('bme_ros2_navigation'),
         'maps',
-        'my_map.yaml'
+        'depot',
+        'depot.yaml'
     )
 
     # Launch rviz

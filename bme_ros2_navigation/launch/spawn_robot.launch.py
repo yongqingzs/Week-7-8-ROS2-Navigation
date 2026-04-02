@@ -25,12 +25,13 @@ def generate_launch_description():
     )
 
     world_arg = DeclareLaunchArgument(
-        'world', default_value='home.sdf',
+        'world', default_value='depot.sdf',
         description='Name of the Gazebo world file to load'
     )
 
     model_arg = DeclareLaunchArgument(
-        'model', default_value='mogi_bot.urdf',
+        # 'model', default_value='mogi_bot.urdf',
+        'model', default_value='mogi_bot_mecanum.urdf',
         description='Name of the URDF description to load'
     )
 

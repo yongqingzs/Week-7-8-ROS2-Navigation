@@ -1,2 +1,5 @@
 **/.DS_Store
 **/Thumbs.db
+map_save.**
+map_serialize.**
+__pycache__/
