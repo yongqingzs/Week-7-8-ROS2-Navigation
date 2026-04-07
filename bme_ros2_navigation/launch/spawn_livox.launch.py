@@ -65,7 +65,7 @@ def generate_launch_description():
     gz_bridge_params_path = os.path.join(
         get_package_share_directory('bme_ros2_navigation'),
         'config',
-        'gz_bridge.yaml'
+        'gz_bridge_livox.yaml'
     )
 
     # Generate path to config file

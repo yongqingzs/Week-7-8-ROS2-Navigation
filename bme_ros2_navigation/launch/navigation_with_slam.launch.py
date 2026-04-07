@@ -52,6 +52,7 @@ def generate_launch_description():
         get_package_share_directory('bme_ros2_navigation'),
         'config',
         'slam_toolbox_mapping.yaml'
+        # 'slam_toolbox_localization.yaml'
     )
 
     # Launch rviz
