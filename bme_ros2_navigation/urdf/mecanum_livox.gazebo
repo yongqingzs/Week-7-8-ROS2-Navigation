@@ -85,13 +85,13 @@
   </gazebo>
 
   <gazebo reference="scan_link">
-    <sensor name="UniqueSensorName" type="custom">
+    <sensor name="RGLLidar" type="custom">
       <plugin filename="RGLServerPluginInstance" name="rgl::RGLServerPluginInstance">
         <range>
             <min>0</min>
-            <max>100</max>
+            <max>245</max>
         </range>
-        <update_rate>10</update_rate>
+        <update_rate>20</update_rate>
         <update_on_paused_sim>false</update_on_paused_sim>
         <topic>rgl_lidar</topic>
         <frame>scan_link</frame>
@@ -107,7 +107,6 @@
               <max_angle>0.261799</max_angle>
           </vertical>
         </pattern_uniform>
-        <pattern_preset>Livox Mid360</pattern_preset>
       </plugin>
       <gz_frame_id>scan_link</gz_frame_id>
     </sensor>

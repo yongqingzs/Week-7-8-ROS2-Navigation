@@ -16,9 +16,21 @@ def generate_launch_description():
     pkg_bme_ros2_navigation = get_package_share_directory('bme_ros2_navigation')
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
 
-    # Add your own gazebo library path here
+    # Add your own gazebo resource path here
     gazebo_models_path = "/home/jazzy/gazebo_models"
     os.environ["GZ_SIM_RESOURCE_PATH"] += os.pathsep + gazebo_models_path
+
+    # Ensure Gazebo can discover locally built RGL plugins when launched via ROS 2.
+    rgl_plugin_dirs = [
+        "/home/jazzy/bme_ws/src/RGLGazeboPlugin/build/RGLServerPlugin",
+        "/home/jazzy/bme_ws/src/RGLGazeboPlugin/build/external/RobotecGPULidar/lib",
+    ]
+    existing_plugin_path = os.environ.get("GZ_SIM_SYSTEM_PLUGIN_PATH", "")
+    plugin_path_parts = [p for p in existing_plugin_path.split(os.pathsep) if p]
+    for plugin_dir in rgl_plugin_dirs:
+        if plugin_dir not in plugin_path_parts:
+            plugin_path_parts.append(plugin_dir)
+    os.environ["GZ_SIM_SYSTEM_PLUGIN_PATH"] = os.pathsep.join(plugin_path_parts)
 
 
     gazebo_launch = IncludeLaunchDescription(

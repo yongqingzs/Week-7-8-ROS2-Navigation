@@ -2,6 +2,7 @@
 <sdf version='1.7'>
 <!-- Model taken from https://app.gazebosim.org/Fahadalbahoth/fuel/worlds/tugbot_depot -->
   <world name='gazebo_world'>
+    <plugin filename="RGLServerPluginManager" name="rgl::RGLServerPluginManager"/>
     <physics name='1ms' type='ignored'>
       <max_step_size>0.01</max_step_size>
       <real_time_factor>1</real_time_factor>
